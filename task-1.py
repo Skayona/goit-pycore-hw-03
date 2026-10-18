@@ -12,7 +12,6 @@ def get_days_from_today(date: str) -> int | None:
 
   date_str_format = '%Y-%m-%d'
 
-
   try:
     date_obj = datetime.strptime(date, date_str_format)
   except Exception as e:
