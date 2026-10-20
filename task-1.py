@@ -14,8 +14,11 @@ def get_days_from_today(date: str) -> int | None:
 
   try:
     date_obj = datetime.strptime(date, date_str_format)
-  except Exception as e:
-    print(f'Invalid date format: {e}. Please use YYYY-MM-DD format.')
+  except ValueError:
+    print(f'Invalid date format. Please use YYYY-MM-DD format.')
+    return None
+  except TypeError:
+    print(f'Provided value is not a date. Please provide a date in YYYY-MM-DD format.')
     return None
 
   today = datetime.today()
